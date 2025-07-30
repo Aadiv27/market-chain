@@ -7,4 +7,21 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          firebase: ['firebase/app', 'firebase/auth', 'firebase/firestore', 'firebase/database', 'firebase/storage'],
+          ui: ['framer-motion', 'lucide-react'],
+          ai: ['@google/generative-ai']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
+  },
+  server: {
+    port: 5173,
+    host: true
+  }
 });

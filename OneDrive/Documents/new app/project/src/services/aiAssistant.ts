@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 // Initialize Gemini AI
-const genAI = new GoogleGenerativeAI('AIzaSyAuRH8ZpqL_KOs4kLFQm6mdrkl7Vhq-d1M');
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyAuRH8ZpqL_KOs4kLFQm6mdrkl7Vhq-d1M');
 
 // Product database with regional names and synonyms
 const productDatabase = {
